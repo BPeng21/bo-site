@@ -1,18 +1,24 @@
 import { Route, Routes } from 'react-router';
 import HomePage from './pages/home/HomePage';
+import NavBar from './components/NavBar';
+import AboutPage from './pages/about/AboutPage';
+import BlogPage from './pages/blog/BlogPage';
+import ResumePage from './pages/resume/ResumePage';
 import './App.css';
 
 function App() {
-  
-
-  
-
   return (
-    <div className="app-container">
-      <Routes>
-        <Route index element={<HomePage />} />
-      </Routes>
-    </div>
+    <>
+      <NavBar />
+      <div className="app-container">
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />}/>
+          <Route path="blog" element={<BlogPage />}/>
+          <Route path="resume" element={<ResumePage />}/>
+        </Routes>
+      </div>
+    </>
 
     // <>
     //   <div>
