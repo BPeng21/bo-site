@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router';
 import HomePage from './pages/home/HomePage';
-import NavBar from './components/NavBar';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import AboutPage from './pages/about/AboutPage';
 import BlogPage from './pages/blog/BlogPage';
 import ResumePage from './pages/resume/ResumePage';
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       <div className="app-container">
-        <NavBar />
+        <Header />
 
         <Routes>
           <Route index element={<HomePage />} />
@@ -18,6 +19,8 @@ function App() {
           <Route path="blog" element={<BlogPage />} />
           <Route path="resume" element={<ResumePage />} />
         </Routes>
+
+        <Footer />
       </div>
     </>
 
