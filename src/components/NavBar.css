@@ -9,5 +9,26 @@
   color: rgb(111, 110, 114);
   text-decoration: none;
   margin: 1rem 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.page-links a:hover .nav-arrow {
+  opacity: 1;
+}
+
+.nav-arrow {
+  position: absolute;
+  bottom: -1.5rem;
+  height: 2rem;
+  width: 4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+}
+
+.current {
+  opacity: 1;
 }
 
