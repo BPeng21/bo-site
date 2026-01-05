@@ -1,0 +1,29 @@
+.snazzy-button {
+  align-self: center;
+  transition: opacity 0.5s, transform 0.5s, display 0.5s allow-discrete;
+}
+
+.snazzy-button.pressed {
+  opacity: 0;
+  display: none;
+}
+
+.snazzy-button:hover {
+  animation: breathing 3s ease-in-out 0s infinite reverse;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+@keyframes breathing {
+  0% {
+    transform: scale(1.01);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1.01);
+  }
+}
