@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import './SnazzyButton.css';
 import { wait } from '../../utilities/time';
+import './SnazzyButton.css';
+import clsx from 'clsx';
 
-type Props = {
-  setIsCardOpen: (isCardOpen: boolean) => void
+interface Props {
+  className: string;
+  setIsCardOpen: (isCardOpen: boolean) => void;
 }
 
-function SnazzyButton({ setIsCardOpen }: Props) {
+function SnazzyButton({ className, setIsCardOpen }: Props) {
   const [isPressed, setIsPressed] = useState(false);
 
   async function pressButton() {
@@ -17,7 +19,7 @@ function SnazzyButton({ setIsCardOpen }: Props) {
 
   return (
     <svg
-      className={isPressed ? 'snazzy-button pressed' : 'snazzy-button'}
+      className={clsx("snazzy-button", className, isPressed && "pressed")}
       width="80"
       height="80"
       viewBox="0 0 80 80"
