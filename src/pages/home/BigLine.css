@@ -1,6 +1,4 @@
 .big-drawn-line {
-  position: absolute;
-  bottom: -775px;
   stroke-dasharray: 828px;
   stroke-dashoffset: 828px;
   animation: draw 3s ease-out 4.5s 1 normal forwards;

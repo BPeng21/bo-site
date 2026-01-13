@@ -1,9 +1,14 @@
+import clsx from 'clsx';
 import './BigLine.css';
 
-function BigLine() {
+interface Props {
+  className?: String;
+}
+
+function BigLine({ className }: Props) {
   return (
     <svg
-      className="big-drawn-line"
+      className={clsx("big-drawn-line", className)}
       width="124"
       height="828"
       viewBox="0 0 124 828"

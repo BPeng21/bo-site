@@ -5,6 +5,12 @@
   padding: 3rem 0;
 }
 
+.tech-tree {
+  align-self: center;
+  position: absolute;
+  top: -40px;
+}
+
 .tech-summary article {
   width: 22rem;
   text-align: center;
