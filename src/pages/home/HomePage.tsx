@@ -7,8 +7,8 @@ function HomePage() {
   return (
     <main className="site-main">
       <HeroSection />
-      {/* <MeAndCareer /> */}
-      <TechSummary />
+      <MeAndCareer />
+      {/* <TechSummary /> */}
     </ main>
   );
 }
