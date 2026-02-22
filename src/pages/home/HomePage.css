@@ -6,7 +6,7 @@
 .scroll-container {
   height: 850px;
   scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .slide-1, .slide-2 {
@@ -17,6 +17,22 @@
 .slide-1 {
   display: flex;
   align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 2.5rem;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.scroll-down-arrow.hidden {
+  opacity: 0;
+}
+
+.scroll-down-arrow.visible {
+  opacity: 1;
 }
 
 /*

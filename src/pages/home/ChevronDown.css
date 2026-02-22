@@ -5,6 +5,49 @@
 }
 
 .click-info {
+  color: rgb(162, 170, 179);
   font-size: 1.5rem;
   margin-bottom: -1rem;
+  animation: tinyBreaths 5s ease-in-out infinite;
+  transition: color 0.15s ease-in;
+}
+
+.click-info.active {
+  color: black;
+  animation-play-state: paused;
+}
+
+.chevron-arrows:hover {
+  animation: fadeMoveDown 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes fadeMoveDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, -0.5rem);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 1rem);
+  }
+}
+
+@keyframes tinyBreaths {
+  0% {
+    transform: scale(1.0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1.0);
+  }
 }

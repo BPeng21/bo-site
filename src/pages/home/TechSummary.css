@@ -54,16 +54,16 @@
 }
 
 .line-one {
-  animation-delay: 5s;
+  animation-delay: 0.5s;
 }
 
 .line-two {
   transform: scaleX(-1);
-  animation-delay: 6s;
+  animation-delay: 1.5s;
 }
 
 .line-three {
-  animation-delay: 7s;
+  animation-delay: 2.5s;
 }
 
 .button-one, .button-two, .button-three {
@@ -74,13 +74,13 @@
 }
 
 .button-one {
-  animation-delay: 6s;
+  animation-delay: 1.5s;
 }
 
 .button-two {
-  animation-delay: 7s
+  animation-delay: 2.5s
 }
 
 .button-three {
-  animation-delay: 8s;
+  animation-delay: 3.5s;
 }
