@@ -18,14 +18,14 @@ function BigLine({ className }: Props) {
       <path
         d="M62.4993 0.00100708L61.9475 825.001"
         stroke="black"
-        stroke-width="3"
+        strokeWidth="3"
       />
       <line
         y1="826.001"
         x2="124"
         y2="826.001"
         stroke="black"
-        stroke-width="3"
+        strokeWidth="3"
       />
     </svg>
   );
