@@ -1,0 +1,55 @@
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeMoveDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, -0.5rem);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 1rem);
+  }
+}
+
+@keyframes tinyBreaths {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    transform: scale(1.01);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1.01);
+  }
+}

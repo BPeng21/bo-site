@@ -1,7 +1,7 @@
-import HeroSection from './HeroSection';
-import TechSummary from './TechSummary';
-import MeAndCareer from './MeAndCareer';
-import ChevronDown from './ChevronDown';
+import HeroSection from './HeroSection/HeroSection';
+import TechSummary from './TechSummary/TechSummary';
+import MeAndCareer from './MeAndCareer/MeAndCareer';
+import ChevronDown from './Icons/ChevronDown';
 import { useRef, useState, type MouseEvent } from 'react';
 import './HomePage.css';
 import clsx from 'clsx';
@@ -10,28 +10,6 @@ function HomePage() {
   const [isScrollable, setIsScrollable] = useState(false);
   const [isTreeActive, setIsTreeActive] = useState(false);
   const slideTwoRef = useRef<HTMLDivElement>(null);
-  // const [isVisible, setIsVisible] = useState(false);
-  // const slideRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         setIsVisible(true);
-  //       } else {
-  //         setIsVisible(false);
-  //       }
-  //       console.log(isVisible);
-  //     },
-  //     { threshold: 0.6 },
-  //   );
-
-  //   if (slideRef.current) {
-  //     observer.observe(slideRef.current);
-  //   }
-
-  //   return () => observer.disconnect();
-  // }, []);
 
   function handleHover(event: MouseEvent<HTMLDivElement>) {
     setIsScrollable(event.type === 'mouseenter');

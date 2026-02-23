@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { wait } from '../../utilities/time.ts';
+import { wait } from '../../../utilities/time.ts';
 import './HeroSection.css';
 
 function HeroSection() {

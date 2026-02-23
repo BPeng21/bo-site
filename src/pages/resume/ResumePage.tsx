@@ -1,5 +1,5 @@
 function ResumePage() {
-  return <div></div>
+  return <div></div>;
 }
 
-export default ResumePage
+export default ResumePage;
