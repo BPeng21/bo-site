@@ -2,9 +2,14 @@ import { useState } from 'react';
 import SmallLine from '../Icons/SmallLine';
 import BigLine from '../Icons/BigLine';
 import SnazzyButton from '../Icons/SnazzyButton';
+import type { TechCard } from '../../../types/home-types';
 import './TechSummary.css';
 
-function TechSummary() {
+interface Props {
+  cards: TechCard[]
+}
+
+function TechSummary({ cards }: Props) {
   const [isCardOneOpen, setIsCardOneOpen] = useState(false);
   const [isCardTwoOpen, setIsCardTwoOpen] = useState(false);
   const [isCardThreeOpen, setIsCardThreeOpen] = useState(false);
@@ -22,14 +27,9 @@ function TechSummary() {
           />
           {isCardOneOpen && (
             <article className="card-right">
-              <h2>Full-Stack Developer</h2>
+              <h2>{cards[0].title}</h2>
               <p>
-                A Software developer with 3 years of professional experience
-                working with both the front-end and back-end technology, I
-                helped build large-scale projects in a highly dynamic
-                environment where my adaptability skills were put to the test
-                through frequent context switching between projects as well as
-                technologies.
+                {cards[0].description}
               </p>
             </article>
           )}
@@ -44,12 +44,9 @@ function TechSummary() {
           />
           {isCardTwoOpen && (
             <article className="card-left">
-              <h2>React-focused Web Dev</h2>
+              <h2>{cards[1].title}</h2>
               <p>
-                My primary focus has been react-based web development. I have a
-                strong foundation in JavaScript while slowly honing my skills in
-                TypeScript with React. In fact, this website is built on
-                Typescript and React!
+                {cards[1].description}
               </p>
             </article>
           )}
@@ -67,11 +64,9 @@ function TechSummary() {
           />
           {isCardThreeOpen && (
             <article className="card-right">
-              <h2>Immersive Web Experience</h2>
+              <h2>{cards[2].title}</h2>
               <p>
-                I strive to develop web applications that give users a great
-                experience. I want my website to feel alive, but also keep it
-                easy on the eye. Hope you enjoy!
+                {cards[2].description}
               </p>
             </article>
           )}

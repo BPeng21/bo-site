@@ -2,9 +2,13 @@ import HeroSection from './HeroSection/HeroSection';
 import TechSummary from './TechSummary/TechSummary';
 import MeAndCareer from './MeAndCareer/MeAndCareer';
 import ChevronDown from './Icons/ChevronDown';
+import homeData from '../../data/homepage-data.json';
+import type { HomepageTypes } from '../../types/home-types';
 import { useRef, useState, type MouseEvent } from 'react';
 import './HomePage.css';
 import clsx from 'clsx';
+
+const homeContent = homeData as HomepageTypes;
 
 function HomePage() {
   const [isScrollable, setIsScrollable] = useState(false);
@@ -46,7 +50,7 @@ function HomePage() {
           />
         </div>
         <div className="slide-2" ref={slideTwoRef}>
-          {isTreeActive && <TechSummary />}
+          {isTreeActive && <TechSummary cards={homeContent.techCards} />}
         </div>
       </div>
     </main>
