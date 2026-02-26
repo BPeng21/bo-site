@@ -1,9 +1,14 @@
+import clsx from 'clsx';
 import './SmallLine.css';
 
-function SmallLine() {
+interface Props {
+  className?: String;
+}
+
+function SmallLine({ className }: Props) {
   return (
     <svg
-      className="small-drawn-line"
+      className={clsx("small-drawn-line", className)}
       width="401"
       height="123"
       viewBox="0 0 401 123"
