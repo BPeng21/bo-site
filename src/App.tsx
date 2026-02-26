@@ -9,13 +9,14 @@ import './App.css';
 function App() {
   return (
     <>
-      <NavBar />
       <div className="app-container">
+        <NavBar />
+
         <Routes>
           <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />}/>
-          <Route path="blog" element={<BlogPage />}/>
-          <Route path="resume" element={<ResumePage />}/>
+          <Route path="about" element={<AboutPage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="resume" element={<ResumePage />} />
         </Routes>
       </div>
     </>

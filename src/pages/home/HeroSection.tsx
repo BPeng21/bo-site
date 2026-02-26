@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { wait } from '../../utilities/time.ts';
-import './IntroBanner.css'
+import './HeroSection.css';
 
-function IntroBanner() {
+function HeroSection() {
   const [isPhaseOne, setIsPhaseOne] = useState(true);
   const [isHelloVisible, setHelloVisible] = useState(true);
   const [isPhaseTwo, setIsPhaseTwo] = useState(false);
@@ -18,31 +18,37 @@ function IntroBanner() {
       setIsPhaseTwo(true);
       await wait(100);
       setIsStartVisible(true);
-      await wait(2000);
+      await wait(1200);
       setIsNameVisible(true);
     };
 
     introSequence();
   }, []);
   return (
-    <h1 className="intro-title">
-      {isPhaseOne && (
-        <span className={isHelloVisible ? 'intro-hello' : 'intro-hello hidden'}>
-          Hello
-        </span>
-      )}
-      {isPhaseTwo && (
-        <span className={isStartVisible ? 'intro-start appear' : 'intro-start'}>
-          My name is
-        </span>
-      )}
-      {isPhaseTwo && (
-        <span className={isNameVisible ? 'intro-name appear' : 'intro-name'}>
-          Bo Peng
-        </span>
-      )}
-    </h1>
+    <header className="hero-section">
+      <h1 className="intro-title">
+        {isPhaseOne && (
+          <span
+            className={isHelloVisible ? 'intro-hello' : 'intro-hello hidden'}
+          >
+            Hello!
+          </span>
+        )}
+        {isPhaseTwo && (
+          <span
+            className={isStartVisible ? 'intro-start appear' : 'intro-start'}
+          >
+            My name is
+          </span>
+        )}
+        {isPhaseTwo && (
+          <span className={isNameVisible ? 'intro-name appear' : 'intro-name'}>
+            Bo Peng
+          </span>
+        )}
+      </h1>
+    </header>
   );
 }
 
-export default IntroBanner;
+export default HeroSection;

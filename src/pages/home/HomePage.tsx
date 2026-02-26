@@ -1,12 +1,12 @@
-import IntroBanner from "./IntroBanner";
+import HeroSection from './HeroSection';
 
 function HomePage() {
   return (
     <>
-      <IntroBanner />
+      <HeroSection />
       
     </>
-  )
+  );
 }
 
 export default HomePage;
