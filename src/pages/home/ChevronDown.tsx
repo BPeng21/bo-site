@@ -1,15 +1,26 @@
 import clsx from 'clsx';
-import './ChevronDown.css'
+import './ChevronDown.css';
+import { type MouseEvent, type MouseEventHandler, useState } from 'react';
 
 interface Props {
   className?: string;
+  onClick?: MouseEventHandler<SVGSVGElement>
 }
 
-function ChevronDown({ className }: Props) {
+function ChevronDown({ className, onClick }: Props) {
+  const [onChevron, setOnChevron] = useState(false);
+
+  function handleHover(event: MouseEvent<SVGElement>) {
+    setOnChevron(event.type === 'mouseenter');
+  }
   return (
-    <div className={clsx("content-scroll", className)}>
-      <p className="click-info">Click for More!</p>
+    <div className={clsx('content-scroll', className)} >
+      <p className={clsx("click-info", onChevron? "active" : "")}>Click for More!</p>
       <svg
+        className="chevron-arrows"
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHover}
+        onClick={onClick}
         width="150"
         height="100"
         viewBox="0 0 150 100"
