@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import './SmallLine.css';
 
 interface Props {
-  className?: String;
+  className?: string;
 }
 
 function SmallLine({ className }: Props) {
