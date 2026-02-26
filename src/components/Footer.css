@@ -1,0 +1,10 @@
+.site-footer {
+  background-color: lightgray;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.site-footer p {
+  margin-top: 1.5rem;
+}
+

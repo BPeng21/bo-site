@@ -25,7 +25,7 @@ function HeroSection() {
     introSequence();
   }, []);
   return (
-    <header className="hero-section">
+    <section className="hero-section">
       <h1 className="intro-title">
         {isPhaseOne && (
           <span
@@ -47,7 +47,7 @@ function HeroSection() {
           </span>
         )}
       </h1>
-    </header>
+    </section>
   );
 }
 

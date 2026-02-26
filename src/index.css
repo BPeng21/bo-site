@@ -5,7 +5,22 @@
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Science Gothic', 'Expletus San', 'Times New Roman';
+  overflow-x: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+header::before,
+main::before,
+footer::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -100vw;
+  right: -100vw;
+  background-color: inherit;
 }
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
