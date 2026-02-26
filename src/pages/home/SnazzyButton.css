@@ -1,6 +1,6 @@
 .snazzy-button {
-  align-self: center;
-  transition: opacity 0.5s, transform 0.5s, display 0.5s allow-discrete;
+  display: block;
+  transition: opacity 0.5s, display 0.5s allow-discrete;
 }
 
 .snazzy-button.pressed {

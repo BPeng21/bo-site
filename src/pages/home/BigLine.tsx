@@ -1,6 +1,7 @@
 import './BigLine.css';
 
 function BigLine() {
+
   return (
     <svg
       className="big-drawn-line"

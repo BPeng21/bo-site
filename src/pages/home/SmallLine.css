@@ -1,5 +1,5 @@
 .small-drawn-line {
   stroke-dasharray: 420px;
   stroke-dashoffset: 420px;
-  animation: draw 1.5s ease-out 5s 1 normal forwards;
+  animation: draw 1.5s ease-out 0s 1 normal forwards;
 }
