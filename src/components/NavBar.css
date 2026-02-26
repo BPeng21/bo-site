@@ -1,0 +1,11 @@
+.page-links {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  font-size: x-large;
+}
+
+.page-links a {
+  text-decoration: none;
+  margin: 1rem 2rem;
+}
