@@ -48,7 +48,6 @@ function HeroSection() {
           </span>
         )}
       </h1>
-      <BigLine />
     </section>
   );
 }

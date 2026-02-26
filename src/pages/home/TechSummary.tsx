@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SmallLine from './SmallLine';
+import BigLine from './BigLine';
 import SnazzyButton from './SnazzyButton';
 import './TechSummary.css';
 
@@ -10,6 +11,7 @@ function TechSummary() {
 
   return (
     <section className="tech-summary">
+      <BigLine className="tech-tree" />
       <div className="info-container">
         <div aria-hidden="true" />
         <div className="node-right">
