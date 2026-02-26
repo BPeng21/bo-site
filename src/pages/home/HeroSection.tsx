@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { wait } from '../../utilities/time.ts';
 import './HeroSection.css';
+import BigLine from './BigLine.tsx';
 
 function HeroSection() {
   const [isPhaseOne, setIsPhaseOne] = useState(true);
@@ -47,6 +48,7 @@ function HeroSection() {
           </span>
         )}
       </h1>
+      <BigLine />
     </section>
   );
 }

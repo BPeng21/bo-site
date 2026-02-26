@@ -1,0 +1,13 @@
+.big-drawn-line {
+  position: absolute;
+  bottom: -750px;
+  stroke-dasharray: 800px;
+  stroke-dashoffset: 800px;
+  animation: draw 3s ease-out 4.5s 1 normal forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

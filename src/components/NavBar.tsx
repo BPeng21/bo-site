@@ -1,11 +1,8 @@
 import { NavLink } from 'react-router';
 import NavArrow from './NavArrow';
-import { useLocation } from 'react-router';
 import './NavBar.css';
 
 function NavBar() {
-  const { pathname } = useLocation();
-
   return (
     <nav className="site-nav">
       <ul className="page-links">
