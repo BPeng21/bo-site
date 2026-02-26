@@ -8,7 +8,7 @@ interface Props {
 function BigLine({ className }: Props) {
   return (
     <svg
-      className={clsx("big-drawn-line", className)}
+      className={clsx('big-drawn-line', className)}
       width="124"
       height="828"
       viewBox="0 0 124 828"
@@ -20,13 +20,7 @@ function BigLine({ className }: Props) {
         stroke="black"
         strokeWidth="3"
       />
-      <line
-        y1="826.001"
-        x2="124"
-        y2="826.001"
-        stroke="black"
-        strokeWidth="3"
-      />
+      <line y1="826.001" x2="124" y2="826.001" stroke="black" strokeWidth="3" />
     </svg>
   );
 }

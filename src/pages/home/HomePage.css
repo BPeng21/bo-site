@@ -9,7 +9,8 @@
   overflow-y: hidden;
 }
 
-.slide-1, .slide-2 {
+.slide-1,
+.slide-2 {
   scroll-snap-align: start;
   min-height: 850px;
 }

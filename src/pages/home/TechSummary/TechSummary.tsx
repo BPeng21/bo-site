@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import SmallLine from './SmallLine';
-import BigLine from './BigLine';
-import SnazzyButton from './SnazzyButton';
+import SmallLine from '../Icons/SmallLine';
+import BigLine from '../Icons/BigLine';
+import SnazzyButton from '../Icons/SnazzyButton';
 import './TechSummary.css';
 
 function TechSummary() {

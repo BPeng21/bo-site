@@ -4,7 +4,7 @@ import { type MouseEvent, type MouseEventHandler, useState } from 'react';
 
 interface Props {
   className?: string;
-  onClick?: MouseEventHandler<SVGSVGElement>
+  onClick?: MouseEventHandler<SVGSVGElement>;
 }
 
 function ChevronDown({ className, onClick }: Props) {
@@ -14,8 +14,10 @@ function ChevronDown({ className, onClick }: Props) {
     setOnChevron(event.type === 'mouseenter');
   }
   return (
-    <div className={clsx('content-scroll', className)} >
-      <p className={clsx("click-info", onChevron? "active" : "")}>Click for More!</p>
+    <div className={clsx('content-scroll', className)}>
+      <p className={clsx('click-info', onChevron ? 'active' : '')}>
+        Click for More!
+      </p>
       <svg
         className="chevron-arrows"
         onMouseEnter={handleHover}

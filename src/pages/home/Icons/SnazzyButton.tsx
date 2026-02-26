@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { wait } from '../../utilities/time';
+import { wait } from '../../../utilities/time';
 import './SnazzyButton.css';
 import clsx from 'clsx';
 

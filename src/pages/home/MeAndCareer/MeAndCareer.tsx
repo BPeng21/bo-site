@@ -1,5 +1,5 @@
 import './MeAndCareer.css';
-import myPhoto from '../../assets/my-photo.jpg'
+import myPhoto from '../../../assets/my-photo.jpg';
 
 function MeAndCareer() {
   return (
