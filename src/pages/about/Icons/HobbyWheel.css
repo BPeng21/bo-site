@@ -1,6 +1,7 @@
 .wheel-wrapper {
    height: 30rem;
    width: 30rem;
+
   -webkit-mask-image: radial-gradient(
     ellipse 35rem 19rem at 100% 49%,
     black 15%,
@@ -9,10 +10,14 @@
   );
   mask-image: radial-gradient(
     ellipse 35rem 19rem at 100% 49%,
-    black 15%,
+    rgb(199, 141, 141) 15%,
     rgba(0, 0, 0, 0.4) 17%,
     transparent 40%
   );
+
+  margin: var(--compact);
+  margin-left: -8rem;
+  margin-top: 0;
 }
 
 .wheel-image {

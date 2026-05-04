@@ -7,3 +7,4 @@ export interface TechCard {
 export interface HomepageTypes {
   techCards: TechCard[];
 }
+

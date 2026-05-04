@@ -1,14 +1,17 @@
 import { useEffect, useState, useRef } from 'react';
 import Wheel from './../../../assets/wheel.svg';
+import type { WheelState } from '../../../types/about-types';
 import './HobbyWheel.css';
 
 interface Props {
   setHobbyIndex: (hobbyIndex: number) => void;
+
+  setWheelStatus: (wheelStatus: WheelState) => void;
 }
 
 const SPIN_DURATION = 6;
 
-function HobbyWheel({ setHobbyIndex }: Props) {
+function HobbyWheel({ setHobbyIndex, setWheelStatus }: Props) {
   const [rotation, setRotation] = useState(0);
   const isDragging = useRef(false);
   const startY = useRef(0);
@@ -21,6 +24,8 @@ function HobbyWheel({ setHobbyIndex }: Props) {
     startRotation.current = rotation % 360;
     document.body.style.cursor = 'grabbing';
     setRotation(startRotation.current);
+
+    setWheelStatus('pending');
   }
 
   function handleMouseMove(event: MouseEvent) {
@@ -39,17 +44,27 @@ function HobbyWheel({ setHobbyIndex }: Props) {
 
     if (rotation - startRotation.current < 30) {
       setRotation(startRotation.current);
+
+      setWheelStatus('ready');
     } else {
       controlledSpinRotation.current += 15;
       controlledSpinRotation.current %= 75;
 
-      calculatedFinalRotation = Math.floor((rotation - startRotation.current) / 30) * 360 +
-      controlledSpinRotation.current;
- 
-      setRotation(calculatedFinalRotation);
-    }
+      calculatedFinalRotation =
+        Math.floor((rotation - startRotation.current) / 30) * 360 +
+        controlledSpinRotation.current;
 
-    setHobbyIndex((calculatedFinalRotation % 360) / 15);
+      setRotation(calculatedFinalRotation);
+
+      setTimeout(() => {
+        setWheelStatus('spinning');
+      }, 0);
+
+      setTimeout(() => {
+        setWheelStatus('ready');
+        setHobbyIndex((calculatedFinalRotation % 360) / 15);
+      }, SPIN_DURATION * 1000);
+    }
   }
 
   useEffect(() => {

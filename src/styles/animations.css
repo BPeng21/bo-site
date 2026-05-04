@@ -53,3 +53,28 @@
     transform: scale(1.01);
   }
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* alternate loading animation
+@keyframes waiting {
+  0% {
+    box-shadow: 0.5rem 0 rgba(255, 255, 255, 0), 1rem 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0.5rem 0 black, 1rem 0 rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0.5rem 0 black, 1rem 0 black;
+  }
+} */

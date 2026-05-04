@@ -1,8 +1,14 @@
+import clsx from 'clsx';
+import type { WheelState } from '../../../types/about-types';
+import './HobbyContent.css';
+
 interface Props {
   hobbyIndex: number;
+
+  wheelStatus: WheelState;
 }
 
-function HobbyContent({ hobbyIndex }: Props) {
+function HobbyContent({ hobbyIndex, wheelStatus }: Props) {
   const hobbiesInfo = [
     {
       title: 'About Me',
@@ -37,11 +43,18 @@ function HobbyContent({ hobbyIndex }: Props) {
     },
   ];
   return (
-    <article>
-      <h2>{hobbiesInfo[hobbyIndex]?.title}</h2>
+    <article className={clsx('hobby-content', wheelStatus)}>
+      <h2 className="hobby-title">{hobbiesInfo[hobbyIndex]?.title}</h2>
       {hobbiesInfo[hobbyIndex]?.descriptions.map((description, index) => (
-        <p key={index}>{description}</p>
+        <p className="hobby-description" key={index}>
+          {description}
+        </p>
       ))}
+
+      {wheelStatus === 'spinning' && 
+      <span className="spinner"></span>
+      // <span className="loader">Spinning</span> alternate loader
+      }
     </article>
   );
 }
