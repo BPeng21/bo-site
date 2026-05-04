@@ -1,3 +1,9 @@
+.site-about {
+  position: relative;
+  display: flex;
+  background-color: var(--site-bg-color);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
