@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import './BigLine.css';
 
 interface Props {
-  className?: String;
+  className?: string;
 }
 
 function BigLine({ className }: Props) {

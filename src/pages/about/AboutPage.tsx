@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import HobbyWheel from './Icons/HobbyWheel';
 import HobbyContent from './HobbyContent/HobbyContent';
-import SpinArrow from './../../assets/spin-arrow.svg';
 import type { WheelState } from '../../types/about-types';
+import SpinArrow from './Icons/SpinArrow';
 import './AboutPage.css';
 
 function AboutPage() {
@@ -10,7 +10,9 @@ function AboutPage() {
 
   const [wheelStatus, setWheelStatus] = useState<WheelState>('ready');
 
-  console.log(wheelStatus);
+  const [isOnWheel, setIsOnWheel] = useState(false);
+
+  console.log(isOnWheel);
 
   return (
     <main className="site-about">
@@ -19,13 +21,20 @@ function AboutPage() {
         <HobbyWheel
           setHobbyIndex={setHobbyIndex}
           setWheelStatus={setWheelStatus}
+          setIsOnWheel={setIsOnWheel}
         />
-        <img
+        {isOnWheel && (
+          <>
+            <SpinArrow className="spin-arrow-img" />
+
+            <h3 className="wheel-spin-text">Drag to spin!</h3>
+          </>
+        )}
+        {/* <img
           src={SpinArrow}
           alt="arrow indicator to spin"
           className="spin-arrow-img"
-        />
-        <h3 className="wheel-spin-text">Drag to spin!</h3>
+        /> */}
       </div>
       <HobbyContent hobbyIndex={hobbyIndex} wheelStatus={wheelStatus} />
     </main>

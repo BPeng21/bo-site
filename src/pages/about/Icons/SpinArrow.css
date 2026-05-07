@@ -1,0 +1,10 @@
+.curved-arrow {
+  pointer-events: none;
+}
+
+.arrow-head {
+  position: absolute;
+  top: 10rem;
+  opacity: 0;
+  animation: fadeIn 0.15s linear 0.5s forwards;
+}

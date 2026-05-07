@@ -1,16 +1,59 @@
-function SpinArrow() {
+import clsx from 'clsx';
+import { useEffect, useRef, useState } from 'react';
+import './SpinArrow.css'
+
+interface Props {
+  className?: string;
+}
+
+function SpinArrow({ className }: Props) {
+  const curveRef = useRef<SVGPathElement>(null);
+  const [length, setLength] = useState(0);
+
+  useEffect(() => {
+    if (curveRef.current) {
+      const totalPathLength = curveRef.current.getTotalLength();
+      setLength(totalPathLength);
+      console.log(totalPathLength);
+    }
+  }, []);
+
   return (
     <svg
-      width="113"
-      height="463"
-      viewBox="0 0 113 463"
+      className={clsx('curved-arrow', className)}
+      width="111"
+      height="464"
+      viewBox="0 0 111 507"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{
+        strokeDasharray: length,
+        strokeDashoffset: length,
+        animation: length > 0 ? 'draw 0.5s forwards' : 'none',
+      }}
     >
       <path
-        d="M69.0827 462.193L112.255 423.859L57.4702 405.638L69.0827 462.193ZM3.84776 3.19308L0.000152588 6.38618C124.874 156.856 108.596 315.306 78.4873 418.084L83.2856 419.489L88.084 420.895C118.687 316.428 135.528 154.035 7.69537 -1.40667e-05L3.84776 3.19308Z"
-        fill="black"
+        ref={curveRef}
+        d="M3.85156 3.18851C114.886 137.308 128.458 238.888 74.8516 462.188"
+        stroke="black"
+        strokeWidth="10"
       />
+
+      <svg
+        className="arrow-head"
+        x="48"
+        y="450"
+        width="57"
+        height="57"
+        viewBox="0 0 57 57"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.2347 56.3958L7.69971e-05 6.47403e-06L56.0915 20.4156L11.2347 56.3958Z"
+          fill="black"
+        />
+      </svg>
     </svg>
   );
 }

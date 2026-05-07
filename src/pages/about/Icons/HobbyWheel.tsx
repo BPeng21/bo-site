@@ -7,16 +7,20 @@ interface Props {
   setHobbyIndex: (hobbyIndex: number) => void;
 
   setWheelStatus: (wheelStatus: WheelState) => void;
+
+  setIsOnWheel: (isOnWheel: boolean) => void;
 }
 
 const SPIN_DURATION = 6;
 
-function HobbyWheel({ setHobbyIndex, setWheelStatus }: Props) {
+function HobbyWheel({ setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
   const [rotation, setRotation] = useState(0);
+  const [alreadySpun, setAlreadySpun] = useState(false);
   const isDragging = useRef(false);
   const startY = useRef(0);
   const startRotation = useRef(0);
   const controlledSpinRotation = useRef(0);
+  const wheelRef = useRef<HTMLDivElement>(null);
 
   function handleMouseDown(event: React.MouseEvent) {
     isDragging.current = true;
@@ -64,19 +68,41 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus }: Props) {
         setHobbyIndex((calculatedFinalRotation % 360) / 15);
       }, SPIN_DURATION * 1000);
     }
+
+    setIsOnWheel(false);
+    setAlreadySpun(true);
   }
 
-  useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseup', handleMouseUp);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, [rotation]);
+  // useEffect(() => {
+  //   window.addEventListener('mousemove', handleMouseMove);
+  //   window.addEventListener('mouseup', handleMouseUp);
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMove);
+  //     window.removeEventListener('mouseup', handleMouseUp);
+  //   };
+  // }, [rotation]);
+
+  function handleHover() {
+    if (alreadySpun) {
+      return;
+    }
+    setIsOnWheel(true);
+  }
+
+  function handleHoverLeave() {
+    if (alreadySpun) {
+      return;
+    }
+    setIsOnWheel(false);
+  }
 
   return (
-    <div className="wheel-wrapper">
+    <div
+      className="wheel-wrapper"
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHoverLeave}
+      ref={wheelRef}
+    >
       <img
         src={Wheel}
         alt="wheel about me"

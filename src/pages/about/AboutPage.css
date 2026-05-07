@@ -24,7 +24,7 @@
 .spin-arrow-img {
   height: 10rem;
   position: absolute;
-  right: 1.5rem;
+  right: -1rem;
   top: 8rem;
   opacity: 0;
 }
@@ -39,6 +39,8 @@
   right: -4rem;
   top: 6rem;
   opacity: 0;
+  pointer-events: none;
+  animation: tinyBreaths 5s ease-in-out infinite;
 }
 
 .full-wheel-comp:hover .wheel-spin-text {
