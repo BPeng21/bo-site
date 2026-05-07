@@ -40,6 +40,8 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
   }
 
   function handleMouseUp() {
+    if (!isDragging.current) return;
+
     isDragging.current = false;
     document.body.style.cursor = 'default';
 
@@ -66,21 +68,21 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
       setTimeout(() => {
         setWheelStatus('ready');
         setHobbyIndex((calculatedFinalRotation % 360) / 15);
-      }, SPIN_DURATION * 1000);
+      }, (SPIN_DURATION - 1) * 1000);
     }
 
     setIsOnWheel(false);
     setAlreadySpun(true);
   }
 
-  // useEffect(() => {
-  //   window.addEventListener('mousemove', handleMouseMove);
-  //   window.addEventListener('mouseup', handleMouseUp);
-  //   return () => {
-  //     window.removeEventListener('mousemove', handleMouseMove);
-  //     window.removeEventListener('mouseup', handleMouseUp);
-  //   };
-  // }, [rotation]);
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [rotation]);
 
   function handleHover() {
     if (alreadySpun) {
