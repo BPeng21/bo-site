@@ -18,8 +18,23 @@
   margin: var(--compact);
   margin-left: -8rem;
   margin-top: 0;
+
+  position: relative;
 }
 
 .wheel-image {
   height: 100%;
+}
+
+.wheel-image:hover {
+  cursor: pointer;
+}
+
+.wheel-image:active {
+  cursor: grabbing;
+}
+
+.spin-arrow {
+
+  position: absolute;
 }

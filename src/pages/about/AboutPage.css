@@ -14,3 +14,33 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+.full-wheel-comp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.spin-arrow-img {
+  height: 10rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 8rem;
+  opacity: 0;
+}
+
+.full-wheel-comp:hover .spin-arrow-img {
+  opacity: 1;
+}
+
+.wheel-spin-text {
+  position: absolute;
+  font-weight: normal;
+  right: -4rem;
+  top: 6rem;
+  opacity: 0;
+}
+
+.full-wheel-comp:hover .wheel-spin-text {
+  opacity: 1;
+}

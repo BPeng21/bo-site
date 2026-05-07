@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
-import Wheel from './../../../assets/wheel.svg';
 import type { WheelState } from '../../../types/about-types';
+import Wheel from './../../../assets/wheel.svg';
 import './HobbyWheel.css';
 
 interface Props {
@@ -22,7 +22,6 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus }: Props) {
     isDragging.current = true;
     startY.current = event.clientY;
     startRotation.current = rotation % 360;
-    document.body.style.cursor = 'grabbing';
     setRotation(startRotation.current);
 
     setWheelStatus('pending');
@@ -90,7 +89,7 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus }: Props) {
             ? 'none'
             : `transform ${SPIN_DURATION}s cubic-bezier(0.1, 0.9, 0.2, 1)`,
         }}
-      ></img>
+      />
     </div>
   );
 }
