@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import HobbyWheel from './Icons/HobbyWheel';
 import HobbyContent from './HobbyContent/HobbyContent';
-import type { WheelState } from '../../types/about-types';
+import type { WheelState, AboutPageTypes } from '../../types/about-types';
 import SpinArrow from './Icons/SpinArrow';
+import aboutData from './../../data/aboutpage-data.json';
 import './AboutPage.css';
+
+const aboutContent = aboutData as AboutPageTypes;
 
 function AboutPage() {
   const [hobbyIndex, setHobbyIndex] = useState(0);
@@ -36,7 +39,7 @@ function AboutPage() {
           className="spin-arrow-img"
         /> */}
       </div>
-      <HobbyContent hobbyIndex={hobbyIndex} wheelStatus={wheelStatus} />
+      <HobbyContent hobbyIndex={hobbyIndex} wheelStatus={wheelStatus} hobbiesInfo={aboutContent.hobbiesInfo} />
     </main>
   );
 }

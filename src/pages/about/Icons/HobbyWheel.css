@@ -15,7 +15,7 @@
     transparent 40%
   );
 
-  margin: var(--compact);
+  margin: var(--spacing-compact);
   margin-left: -8rem;
   margin-top: 0;
 

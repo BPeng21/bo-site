@@ -1,28 +1,36 @@
 .hobby-content {
   position: relative;
-  margin: var(--compact);
+  margin: var(--spacing-compact);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
 }
 
 .hobby-content.pending {
   color: rgb(197, 198, 199);
 }
 
+.hobby-content.pending img {
+  opacity: 0.4;
+}
+
 .hobby-content.spinning {
   color: rgb(197, 198, 199);
 }
 
+.hobby-content.spinning img {
+  opacity: 0.4;
+}
+
 .hobby-title {
-  font-size: var(--header-2);
+  font-size: var(--size-header-2);
   text-align: center;
 }
 
 .hobby-description {
-  font-size: var(--body);
+  font-size: var(--size-body);
   text-align: justify;
-  margin-bottom: var(--mini);
+  margin-bottom: var(--spacing-mini);
 }
 
 .spinner {
@@ -33,6 +41,26 @@
   position: absolute;
   top: 9rem;
   animation: rotate 1s linear infinite;
+}
+
+.hobby-content img {
+  margin-top: var(--spacing-compact);
+}
+
+.trvl-img {
+  width: 25rem;
+}
+
+.sprts-img {
+  width: 25rem;
+}
+
+.vd-games-img {
+  width: 35rem;
+}
+
+.arcd-img {
+  width: 20rem;
 }
 
 /* Alternative loader css
