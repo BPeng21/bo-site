@@ -1,0 +1,51 @@
+.credits-button-and-modal {
+  display: flex;
+}
+
+.credits-button {
+  font-style: inherit;
+  align-self: flex-end;
+  height: 2rem;
+  width: 7rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  border-width: 1px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.credits-button:hover {
+  background-color: white;
+}
+
+.credits-modal {
+  align-self: center;
+  justify-self: center;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.close-modal {
+  font-size: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.projects-credits-header {
+  margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+  margin: 0rem;
+}

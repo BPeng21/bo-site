@@ -43,16 +43,12 @@
   animation: rotate 1s linear infinite;
 }
 
-.hobby-content img {
-  margin-top: var(--spacing-compact);
-}
-
 .trvl-img {
-  width: 25rem;
+  width: 23rem;
 }
 
 .sprts-img {
-  width: 25rem;
+  width: 20rem;
 }
 
 .vd-games-img {
@@ -60,7 +56,7 @@
 }
 
 .arcd-img {
-  width: 20rem;
+  width: 18rem;
 }
 
 /* Alternative loader css

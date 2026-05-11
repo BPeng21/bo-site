@@ -1,0 +1,7 @@
+.contact-info {
+  flex-grow: 1;
+}
+
+.contact-info p {
+  margin-top: 1.5rem;
+}

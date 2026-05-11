@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import NavArrow from './NavArrow';
+import NavArrow from './Icons/NavArrow';
 import './NavBar.css';
 
 function NavBar() {

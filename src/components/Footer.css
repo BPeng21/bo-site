@@ -1,9 +1,17 @@
 .site-footer {
+  display: flex;
+  flex-direction: column;
   background-color: lightgray;
-  padding: 5rem 10rem;
+  padding: 5rem 10rem 2rem 10rem;
   position: relative;
 }
 
-.site-footer p {
-  margin-top: 1.5rem;
+.footer-main {
+  display: flex
+}
+
+.footer-bottom {
+  border-top: 1px solid black;
+  margin-top: var(--spacing-mini);
+  padding-top: var(--spacing-mini);
 }
