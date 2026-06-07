@@ -65,14 +65,19 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
         setWheelStatus('spinning');
       }, 0);
 
-      setTimeout(() => {
-        setWheelStatus('ready');
-        setHobbyIndex((calculatedFinalRotation % 360) / 15);
-      }, (SPIN_DURATION - 1) * 1000);
-    }
+      setTimeout(
+        () => {
+          setWheelStatus('ready');
+          setHobbyIndex((calculatedFinalRotation % 360) / 15);
+        },
+        (SPIN_DURATION - 1) * 1000,
+      );
 
-    setIsOnWheel(false);
-    setAlreadySpun(true);
+      if (!alreadySpun) {
+        setIsOnWheel(false);
+        setAlreadySpun(true);
+      }
+    }
   }
 
   useEffect(() => {
