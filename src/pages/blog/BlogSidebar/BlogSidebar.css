@@ -1,0 +1,20 @@
+.blog-main-menu {
+  list-style-type: none;
+}
+
+.blog-post-list {
+  list-style-type: none;
+}
+
+.sub-tab {
+  cursor: default;
+}
+
+.sub-tab.selected {
+  background-color: red;
+}
+
+.sub-tab:hover:not(.selected) {
+  background-color: gray;
+  cursor: pointer;
+}
