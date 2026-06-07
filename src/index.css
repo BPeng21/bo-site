@@ -24,6 +24,11 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+main {
+  position: relative;
+  background-color: var(--site-bg-color);
+}
+
 header::before,
 main::before,
 footer::before {
