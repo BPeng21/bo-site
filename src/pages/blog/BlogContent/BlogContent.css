@@ -1,0 +1,4 @@
+.blog-content {
+  text-align: center;
+  margin: var(--spacing-compact);
+}
