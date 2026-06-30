@@ -2,18 +2,22 @@
   flex-grow: 1;
   display: flex;
   align-items: center;
-  padding-bottom: 6rem;
   justify-content: center;
+  padding-bottom: 6rem;
 }
 
 .my-photo {
   height: 30rem;
   padding-left: 10rem;
+  opacity: 0;
+  animation: fadeIn 0.5s linear 4s forwards;
 }
 
 .career-caption {
-  flex: 1;
+  opacity: 0;
+  flex-grow: 1;
   text-align: center;
+  animation: fadeIn 0.5s linear 4.05s forwards;
 }
 
 .career-title {

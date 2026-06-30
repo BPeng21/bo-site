@@ -13,6 +13,7 @@ const homeContent = homeData as HomepageTypes;
 function HomePage() {
   const [isScrollable, setIsScrollable] = useState(false);
   const [isTreeActive, setIsTreeActive] = useState(false);
+  const [isSlideTwo, setIsSlideTwo] = useState(false);
   const slideTwoRef = useRef<HTMLDivElement>(null);
 
   function handleHover(event: MouseEvent<HTMLDivElement>) {
@@ -27,6 +28,7 @@ function HomePage() {
         block: 'start',
       });
 
+      setIsSlideTwo(true);
       setIsTreeActive(true);
     }
   }
@@ -34,7 +36,7 @@ function HomePage() {
   return (
     <main className="site-main">
       <HeroSection />
-      <div className="scroll-container">
+      <div className={clsx("scroll-container", isSlideTwo && "grown")}>
         <div
           className="slide-1"
           onMouseEnter={handleHover}

@@ -1,10 +1,14 @@
 .scroll-container {
-  height: 850px;
+  height: 675px;
   scroll-snap-type: y mandatory;
   overflow-y: hidden;
+  transition: height 0.15s;
 }
 
-.slide-1,
+.scroll-container.grown {
+  height: 850px
+}
+
 .slide-2 {
   scroll-snap-align: start;
   min-height: 850px;
@@ -13,13 +17,14 @@
 .slide-1 {
   display: flex;
   align-items: center;
-  position: relative;
   justify-content: center;
+  position: relative;
+  scroll-snap-align: start;
 }
 
 .scroll-down-arrow {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: -4rem;
   transition: opacity 0.15s ease-in-out;
 }
 
