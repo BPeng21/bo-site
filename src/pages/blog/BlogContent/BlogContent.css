@@ -2,3 +2,18 @@
   text-align: center;
   margin: var(--spacing-compact);
 }
+
+.blog-title {
+  font-size: var(--size-header-2);
+}
+
+.blog-text {
+  font-size: var(--size-body);
+  text-align: justify;
+  margin-bottom: var(--spacing-mini);
+}
+
+.blog-image {
+  height: 20rem;
+  margin-bottom: var(--spacing-mini);
+}
