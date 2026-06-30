@@ -1,9 +1,13 @@
+import { useLocation } from 'react-router';
 import './Header.css';
 import NavBar from './NavBar';
+import clsx from 'clsx';
 
 function Header() {
+  const location = useLocation();
+
   return (
-    <header className="site-header">
+    <header className={clsx("site-header", location.pathname === "/" && "intro")}>
       <NavBar />
     </header>
   );
