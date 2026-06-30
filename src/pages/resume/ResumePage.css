@@ -1,0 +1,11 @@
+.site-resume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35rem;
+  text-align: center;
+}
+
+.status-notice {
+  font-size: var(--size-header-1);
+}
