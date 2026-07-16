@@ -6,7 +6,7 @@ import type { TechCard } from '../../../types/home-types';
 import './TechSummary.css';
 
 interface Props {
-  cards: TechCard[]
+  cards: TechCard[];
 }
 
 function TechSummary({ cards }: Props) {
@@ -28,9 +28,7 @@ function TechSummary({ cards }: Props) {
           {isCardOneOpen && (
             <article className="card-right">
               <h2>{cards[0].title}</h2>
-              <p>
-                {cards[0].description}
-              </p>
+              <p>{cards[0].description}</p>
             </article>
           )}
         </div>
@@ -45,9 +43,7 @@ function TechSummary({ cards }: Props) {
           {isCardTwoOpen && (
             <article className="card-left">
               <h2>{cards[1].title}</h2>
-              <p>
-                {cards[1].description}
-              </p>
+              <p>{cards[1].description}</p>
             </article>
           )}
           <SmallLine className="line-two" />
@@ -65,9 +61,7 @@ function TechSummary({ cards }: Props) {
           {isCardThreeOpen && (
             <article className="card-right">
               <h2>{cards[2].title}</h2>
-              <p>
-                {cards[2].description}
-              </p>
+              <p>{cards[2].description}</p>
             </article>
           )}
         </div>

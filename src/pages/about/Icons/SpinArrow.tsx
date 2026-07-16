@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
-import './SpinArrow.css'
+import './SpinArrow.css';
 
 interface Props {
   className?: string;

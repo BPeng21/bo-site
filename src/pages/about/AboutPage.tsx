@@ -37,7 +37,11 @@ function AboutPage() {
           className="spin-arrow-img"
         /> */}
       </div>
-      <HobbyContent hobbyIndex={hobbyIndex} wheelStatus={wheelStatus} hobbiesInfo={aboutContent.hobbiesInfo} />
+      <HobbyContent
+        hobbyIndex={hobbyIndex}
+        wheelStatus={wheelStatus}
+        hobbiesInfo={aboutContent.hobbiesInfo}
+      />
     </main>
   );
 }

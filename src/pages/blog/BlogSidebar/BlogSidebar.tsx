@@ -72,7 +72,12 @@ function BlogSidebar({ posts, selectedPost, setSelectedPost }: Props) {
                 >
                   <div className="sub-tab-content">
                     <span className="sidebar-text">{blogPost.title}</span>
-                    <span className={clsx("blog-post-arrow", selectedPost?.id === blogPost.id && "selected")}></span>
+                    <span
+                      className={clsx(
+                        'blog-post-arrow',
+                        selectedPost?.id === blogPost.id && 'selected',
+                      )}
+                    ></span>
                   </div>
                 </li>
               );

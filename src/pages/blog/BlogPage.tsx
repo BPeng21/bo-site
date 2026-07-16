@@ -3,7 +3,7 @@ import BlogSidebar from './BlogSidebar/BlogSidebar.tsx';
 import BlogContent from './BlogContent/BlogContent.tsx';
 import type { BlogPost } from '../../types/blog-post-types.ts';
 import axios from 'axios';
-import './BlogPage.css'
+import './BlogPage.css';
 
 function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -21,7 +21,11 @@ function BlogPage() {
 
   return (
     <main className="site-blog">
-      <BlogSidebar posts={posts} selectedPost={selectedPost} setSelectedPost={setSelectedPost} />
+      <BlogSidebar
+        posts={posts}
+        selectedPost={selectedPost}
+        setSelectedPost={setSelectedPost}
+      />
       <BlogContent selectedPost={selectedPost} />
     </main>
   );

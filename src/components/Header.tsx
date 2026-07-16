@@ -19,7 +19,11 @@ function Header() {
 
   return (
     <header
-      className={clsx('site-header', location.pathname === '/' && 'intro', introSeen && 'no-intro')}
+      className={clsx(
+        'site-header',
+        location.pathname === '/' && 'intro',
+        introSeen && 'no-intro',
+      )}
     >
       <NavBar />
     </header>

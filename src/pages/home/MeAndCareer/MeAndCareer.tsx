@@ -6,13 +6,13 @@ import clsx from 'clsx';
 
 function MeAndCareer() {
   const isFirstContext = useContext(FirstVisitContext);
-  const [ skippable, setSkippable ] = useState(false);
+  const [skippable, setSkippable] = useState(false);
 
   useEffect(() => {
     if (!isFirstContext) {
       setSkippable(true);
     }
-  }, [])
+  }, []);
   return (
     <section className={clsx('me-and-career', skippable && 'seen')}>
       <img className="my-photo" src={myPhoto} />
