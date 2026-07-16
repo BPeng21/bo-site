@@ -6,6 +6,11 @@
   padding-bottom: 6rem;
 }
 
+.me-and-career.seen * {
+  opacity: 1;
+  animation: none;
+}
+
 .my-photo {
   height: 30rem;
   padding-left: 10rem;

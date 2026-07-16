@@ -15,8 +15,6 @@ function AboutPage() {
 
   const [isOnWheel, setIsOnWheel] = useState(false);
 
-  console.log(isOnWheel);
-
   return (
     <main className="site-about">
       <h1 className="sr-only">About Web Developer and Hobbies</h1>

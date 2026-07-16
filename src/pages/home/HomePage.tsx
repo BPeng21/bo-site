@@ -3,18 +3,31 @@ import TechSummary from './TechSummary/TechSummary';
 import MeAndCareer from './MeAndCareer/MeAndCareer';
 import ChevronDown from './Icons/ChevronDown';
 import homeData from '../../data/homepage-data.json';
+import { FirstVisitContext } from '../../contexts/FirstVisitContext';
 import type { HomepageTypes } from '../../types/home-types';
-import { useRef, useState, type MouseEvent } from 'react';
+import {
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+} from 'react';
 import './HomePage.css';
 import clsx from 'clsx';
 
 const homeContent = homeData as HomepageTypes;
 
-function HomePage() {
+interface Props {
+  setIsFirstVisit: (isFirstVisit: boolean) => void;
+}
+
+function HomePage({ setIsFirstVisit }: Props) {
   const [isScrollable, setIsScrollable] = useState(false);
   const [isTreeActive, setIsTreeActive] = useState(false);
   const [isSlideTwo, setIsSlideTwo] = useState(false);
   const slideTwoRef = useRef<HTMLDivElement>(null);
+
+  const isFirstContext = useContext(FirstVisitContext);
 
   function handleHover(event: MouseEvent<HTMLDivElement>) {
     setIsScrollable(event.type === 'mouseenter');
@@ -33,10 +46,16 @@ function HomePage() {
     }
   }
 
+  useEffect(() => {
+    if (isFirstContext) {
+      setIsFirstVisit(false);
+    }
+  }, []);
+
   return (
     <main className="site-main">
       <HeroSection />
-      <div className={clsx("scroll-container", isSlideTwo && "grown")}>
+      <div className={clsx('scroll-container', isSlideTwo && 'grown')}>
         <div
           className="slide-1"
           onMouseEnter={handleHover}

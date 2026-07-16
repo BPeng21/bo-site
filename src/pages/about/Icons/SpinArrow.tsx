@@ -14,7 +14,6 @@ function SpinArrow({ className }: Props) {
     if (curveRef.current) {
       const totalPathLength = curveRef.current.getTotalLength();
       setLength(totalPathLength);
-      console.log(totalPathLength);
     }
   }, []);
 

@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { wait } from '../../../utilities/time.ts';
 import './HeroSection.css';
+import { FirstVisitContext } from '../../../contexts/FirstVisitContext.tsx';
 
 function HeroSection() {
+  const isFirstContext = useContext(FirstVisitContext);
+
   const [isPhaseOne, setIsPhaseOne] = useState(true);
   const [isHelloVisible, setHelloVisible] = useState(true);
   const [isPhaseTwo, setIsPhaseTwo] = useState(false);
@@ -22,7 +25,15 @@ function HeroSection() {
       setIsNameVisible(true);
     };
 
-    introSequence();
+    if (isFirstContext) {
+      introSequence();
+    } else {
+      setHelloVisible(false);
+      setIsPhaseOne(false);
+      setIsPhaseTwo(true);
+      setIsStartVisible(true);
+      setIsNameVisible(true);
+    }
   }, []);
   return (
     <section className="hero-section">

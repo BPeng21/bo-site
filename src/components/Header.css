@@ -9,3 +9,9 @@
   padding-bottom: 0rem;
   animation: fill 0.75s ease-in-out 4.5s forwards;
 }
+
+.site-header.no-intro {
+  max-height: 5rem;
+  padding-bottom: 0.5rem;
+  animation: none;
+}
