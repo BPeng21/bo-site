@@ -5,10 +5,14 @@ import type { BlogPost } from '../../types/blog-post-types.ts';
 import axios from 'axios';
 import './BlogPage.css';
 
-function BlogPage() {
+interface Props {
+  selectedPost: BlogPost | null;
+  setSelectedPost: (selectedPost: BlogPost | null) => void;
+}
+
+function BlogPage({ selectedPost, setSelectedPost }: Props) {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   // const [error, setError] = useState<string | null>(null);
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {
     const fetchPosts = async () => {

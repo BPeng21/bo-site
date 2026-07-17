@@ -7,11 +7,13 @@ import AboutPage from './pages/about/AboutPage';
 import BlogPage from './pages/blog/BlogPage';
 import ResumePage from './pages/resume/ResumePage';
 import { FirstVisitContext } from './contexts/FirstVisitContext';
+import type { BlogPost } from './types/blog-post-types';
 import './App.css';
 
 function App() {
   const [isFirstVisitHome, setIsFirstVisitHome] = useState(true);
   const [hobbyIndex, setHobbyIndex] = useState(0);
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   return (
     <>
@@ -33,7 +35,15 @@ function App() {
                 />
               }
             />
-            <Route path="blog" element={<BlogPage />} />
+            <Route
+              path="blog"
+              element={
+                <BlogPage
+                  selectedPost={selectedPost}
+                  setSelectedPost={setSelectedPost}
+                />
+              }
+            />
             <Route path="resume" element={<ResumePage />} />
           </Routes>
 

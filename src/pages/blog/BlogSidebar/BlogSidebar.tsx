@@ -10,7 +10,7 @@ interface Props {
 }
 
 function BlogSidebar({ posts, selectedPost, setSelectedPost }: Props) {
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState(selectedPost !== null);
   const [onBlogTab, setOnBlogTab] = useState(false);
 
   function handleAccordian() {
