@@ -73,3 +73,5 @@ export default defineConfig([
   },
 ]);
 ```
+
+- use npm run format to allow prettier to automatically format all files

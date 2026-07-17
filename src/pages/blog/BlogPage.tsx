@@ -7,7 +7,7 @@ import './BlogPage.css';
 
 function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {

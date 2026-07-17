@@ -11,6 +11,7 @@ import './App.css';
 
 function App() {
   const [isFirstVisitHome, setIsFirstVisitHome] = useState(true);
+  const [hobbyIndex, setHobbyIndex] = useState(0);
 
   return (
     <>
@@ -23,7 +24,15 @@ function App() {
               index
               element={<HomePage setIsFirstVisit={setIsFirstVisitHome} />}
             />
-            <Route path="about" element={<AboutPage />} />
+            <Route
+              path="about"
+              element={
+                <AboutPage
+                  hobbyIndex={hobbyIndex}
+                  setHobbyIndex={setHobbyIndex}
+                />
+              }
+            />
             <Route path="blog" element={<BlogPage />} />
             <Route path="resume" element={<ResumePage />} />
           </Routes>

@@ -4,6 +4,8 @@ import Wheel from './../../../assets/wheel.svg';
 import './HobbyWheel.css';
 
 interface Props {
+  hobbyIndex: number;
+
   setHobbyIndex: (hobbyIndex: number) => void;
 
   setWheelStatus: (wheelStatus: WheelState) => void;
@@ -13,13 +15,13 @@ interface Props {
 
 const SPIN_DURATION = 6;
 
-function HobbyWheel({ setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
-  const [rotation, setRotation] = useState(0);
-  const [alreadySpun, setAlreadySpun] = useState(false);
+function HobbyWheel({ hobbyIndex, setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
+  const [rotation, setRotation] = useState(hobbyIndex * 15);
+  const alreadySpun = useRef(false);
   const isDragging = useRef(false);
   const startY = useRef(0);
   const startRotation = useRef(0);
-  const controlledSpinRotation = useRef(0);
+  const controlledSpinRotation = useRef(hobbyIndex * 15);
   const wheelRef = useRef<HTMLDivElement>(null);
 
   function handleMouseDown(event: React.MouseEvent) {
@@ -73,9 +75,9 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
         (SPIN_DURATION - 1) * 1000,
       );
 
-      if (!alreadySpun) {
+      if (!alreadySpun.current) {
         setIsOnWheel(false);
-        setAlreadySpun(true);
+        alreadySpun.current = true;
       }
     }
   }
@@ -90,14 +92,14 @@ function HobbyWheel({ setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
   }, [rotation]);
 
   function handleHover() {
-    if (alreadySpun) {
+    if (alreadySpun.current) {
       return;
     }
     setIsOnWheel(true);
   }
 
   function handleHoverLeave() {
-    if (alreadySpun) {
+    if (alreadySpun.current) {
       return;
     }
     setIsOnWheel(false);

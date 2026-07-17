@@ -8,9 +8,12 @@ import './AboutPage.css';
 
 const aboutContent = aboutData as AboutPageTypes;
 
-function AboutPage() {
-  const [hobbyIndex, setHobbyIndex] = useState(0);
+interface Props {
+  hobbyIndex: number;
+  setHobbyIndex: (hobbyIndex: number) => void;
+}
 
+function AboutPage({ hobbyIndex, setHobbyIndex }: Props) {
   const [wheelStatus, setWheelStatus] = useState<WheelState>('ready');
 
   const [isOnWheel, setIsOnWheel] = useState(false);
@@ -20,6 +23,7 @@ function AboutPage() {
       <h1 className="sr-only">About Web Developer and Hobbies</h1>
       <div className="full-wheel-comp">
         <HobbyWheel
+          hobbyIndex={hobbyIndex}
           setHobbyIndex={setHobbyIndex}
           setWheelStatus={setWheelStatus}
           setIsOnWheel={setIsOnWheel}
