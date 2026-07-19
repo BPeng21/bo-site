@@ -16,7 +16,9 @@ function BlogPage({ selectedPost, setSelectedPost }: Props) {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/blogposts`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/blogposts`,
+      );
       setPosts(response.data);
     };
 

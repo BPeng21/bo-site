@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import type { WheelState } from '../../../types/about-types';
-import Wheel from './../../../assets/wheel.svg';
 import './HobbyWheel.css';
 
 interface Props {
@@ -15,7 +14,12 @@ interface Props {
 
 const SPIN_DURATION = 6;
 
-function HobbyWheel({ hobbyIndex, setHobbyIndex, setWheelStatus, setIsOnWheel }: Props) {
+function HobbyWheel({
+  hobbyIndex,
+  setHobbyIndex,
+  setWheelStatus,
+  setIsOnWheel,
+}: Props) {
   const [rotation, setRotation] = useState(hobbyIndex * 15);
   const alreadySpun = useRef(false);
   const isDragging = useRef(false);
@@ -113,7 +117,7 @@ function HobbyWheel({ hobbyIndex, setHobbyIndex, setWheelStatus, setIsOnWheel }:
       ref={wheelRef}
     >
       <img
-        src={Wheel}
+        src="/images/wheel.svg"
         alt="wheel about me"
         className="wheel-image"
         draggable="false"

@@ -54,34 +54,35 @@ function BlogSidebar({ posts, selectedPost, setSelectedPost }: Props) {
               isOpened || onBlogTab ? 'expanded' : 'collapsed',
             )}
           >
-            {Array.isArray(posts) && posts.map((blogPost) => {
-              return (
-                <li
-                  key={blogPost.id}
-                  className={clsx(
-                    'sub-tab',
-                    `post-tab-${blogPost.id}`,
-                    selectedPost?.id === blogPost.id && 'selected',
-                  )}
-                  onClick={() => {
-                    setSelectedPost(blogPost);
-                    if (!isOpened) {
-                      setIsOpened(true);
-                    }
-                  }}
-                >
-                  <div className="sub-tab-content">
-                    <span className="sidebar-text">{blogPost.title}</span>
-                    <span
-                      className={clsx(
-                        'blog-post-arrow',
-                        selectedPost?.id === blogPost.id && 'selected',
-                      )}
-                    ></span>
-                  </div>
-                </li>
-              );
-            })}
+            {Array.isArray(posts) &&
+              posts.map((blogPost) => {
+                return (
+                  <li
+                    key={blogPost.id}
+                    className={clsx(
+                      'sub-tab',
+                      `post-tab-${blogPost.id}`,
+                      selectedPost?.id === blogPost.id && 'selected',
+                    )}
+                    onClick={() => {
+                      setSelectedPost(blogPost);
+                      if (!isOpened) {
+                        setIsOpened(true);
+                      }
+                    }}
+                  >
+                    <div className="sub-tab-content">
+                      <span className="sidebar-text">{blogPost.title}</span>
+                      <span
+                        className={clsx(
+                          'blog-post-arrow',
+                          selectedPost?.id === blogPost.id && 'selected',
+                        )}
+                      ></span>
+                    </div>
+                  </li>
+                );
+              })}
           </ul>
         </li>
       </ul>
