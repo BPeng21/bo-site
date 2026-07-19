@@ -54,7 +54,7 @@ function BlogSidebar({ posts, selectedPost, setSelectedPost }: Props) {
               isOpened || onBlogTab ? 'expanded' : 'collapsed',
             )}
           >
-            {posts.map((blogPost) => {
+            {Array.isArray(posts) && posts.map((blogPost) => {
               return (
                 <li
                   key={blogPost.id}
