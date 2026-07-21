@@ -16,7 +16,7 @@ function MeAndCareer() {
     <section className={clsx('me-and-career', skippable && 'seen')}>
       <img
         className="my-photo"
-        src="/images/website-photo.png"
+        src="/images/website-photo.webp"
         alt="My intro photo"
       />
       <div className="career-caption">
