@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import HomePage from './pages/home/HomePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,6 +14,7 @@ function App() {
   const [isFirstVisitHome, setIsFirstVisitHome] = useState(true);
   const [hobbyIndex, setHobbyIndex] = useState(0);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const alreadySpun = useRef(false);
 
   return (
     <>
@@ -32,6 +33,7 @@ function App() {
                 <AboutPage
                   hobbyIndex={hobbyIndex}
                   setHobbyIndex={setHobbyIndex}
+                  alreadySpun={alreadySpun}
                 />
               }
             />

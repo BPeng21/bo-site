@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, type RefObject } from 'react';
 import type { WheelState } from '../../../types/about-types';
 import './HobbyWheel.css';
+import clsx from 'clsx';
 
 interface Props {
   hobbyIndex: number;
@@ -10,6 +11,8 @@ interface Props {
   setWheelStatus: (wheelStatus: WheelState) => void;
 
   setIsOnWheel: (isOnWheel: boolean) => void;
+
+  alreadySpun: RefObject<boolean>;
 }
 
 const SPIN_DURATION = 6;
@@ -19,14 +22,16 @@ function HobbyWheel({
   setHobbyIndex,
   setWheelStatus,
   setIsOnWheel,
+  alreadySpun
 }: Props) {
   const [rotation, setRotation] = useState(hobbyIndex * 15);
-  const alreadySpun = useRef(false);
   const isDragging = useRef(false);
   const startY = useRef(0);
   const startRotation = useRef(0);
   const controlledSpinRotation = useRef(hobbyIndex * 15);
   const wheelRef = useRef<HTMLDivElement>(null);
+
+  const [onIntroAnimation, setOnIntroAnimation] = useState(!alreadySpun.current && hobbyIndex === 0);
 
   function handleMouseDown(event: React.MouseEvent) {
     isDragging.current = true;
@@ -96,6 +101,9 @@ function HobbyWheel({
   }, [rotation]);
 
   function handleHover() {
+    if (onIntroAnimation) {
+      setOnIntroAnimation(false);
+    }
     if (alreadySpun.current) {
       return;
     }
@@ -119,7 +127,11 @@ function HobbyWheel({
       <img
         src="/images/wheel.svg"
         alt="wheel about me"
-        className="wheel-image"
+        className={clsx(
+          'wheel-image',
+          onIntroAnimation && 'at-about',
+        )}
+        onAnimationEnd={() => setOnIntroAnimation(false)}
         draggable="false"
         onMouseDown={handleMouseDown}
         style={{

@@ -71,6 +71,18 @@
   }
 }
 
+@keyframes rotateToStop {
+  from {
+    opacity: 0;
+    transform: rotate(29deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
 /* alternate loading animation
 @keyframes waiting {
   0% {

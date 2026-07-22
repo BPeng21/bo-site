@@ -24,6 +24,11 @@
 
 .wheel-image {
   height: 100%;
+  
+}
+
+.wheel-image.at-about{
+  animation: rotateToStop 2.5s forwards;
 }
 
 .wheel-image:hover {

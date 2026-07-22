@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type RefObject } from 'react';
 import HobbyWheel from './Icons/HobbyWheel';
 import HobbyContent from './HobbyContent/HobbyContent';
 import type { WheelState, AboutPageTypes } from '../../types/about-types';
@@ -10,10 +10,13 @@ const aboutContent = aboutData as AboutPageTypes;
 
 interface Props {
   hobbyIndex: number;
+
   setHobbyIndex: (hobbyIndex: number) => void;
+
+  alreadySpun: RefObject<Boolean>;
 }
 
-function AboutPage({ hobbyIndex, setHobbyIndex }: Props) {
+function AboutPage({ hobbyIndex, setHobbyIndex, alreadySpun }: Props) {
   const [wheelStatus, setWheelStatus] = useState<WheelState>('ready');
 
   const [isOnWheel, setIsOnWheel] = useState(false);
@@ -27,6 +30,7 @@ function AboutPage({ hobbyIndex, setHobbyIndex }: Props) {
           setHobbyIndex={setHobbyIndex}
           setWheelStatus={setWheelStatus}
           setIsOnWheel={setIsOnWheel}
+          alreadySpun={alreadySpun}
         />
         {isOnWheel && (
           <>
