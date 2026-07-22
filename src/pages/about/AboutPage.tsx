@@ -13,7 +13,7 @@ interface Props {
 
   setHobbyIndex: (hobbyIndex: number) => void;
 
-  alreadySpun: RefObject<Boolean>;
+  alreadySpun: RefObject<boolean>;
 }
 
 function AboutPage({ hobbyIndex, setHobbyIndex, alreadySpun }: Props) {
