@@ -1,9 +1,9 @@
 import BlogSidebar from './BlogSidebar/BlogSidebar.tsx';
 import BlogContent from './BlogContent/BlogContent.tsx';
 import type { BlogPost } from '../../types/blog-post-types.ts';
-import axios from 'axios';
-import './BlogPage.css';
 import { useQuery } from '@tanstack/react-query';
+import { fetchPosts } from '../../api/blogPost.ts';
+import './BlogPage.css';
 
 interface Props {
   selectedPost: BlogPost | null;
@@ -27,12 +27,7 @@ function BlogPage({ selectedPost, setSelectedPost }: Props) {
 
   const { data: posts } = useQuery({
     queryKey: ['blogPosts'],
-    queryFn: async () => {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/blogposts`,
-      );
-      return response.data;
-    },
+    queryFn: fetchPosts,
   });
 
   return (

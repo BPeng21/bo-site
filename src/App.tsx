@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import HomePage from './pages/home/HomePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,6 +8,8 @@ import BlogPage from './pages/blog/BlogPage';
 import ResumePage from './pages/resume/ResumePage';
 import { FirstVisitContext } from './contexts/FirstVisitContext';
 import type { BlogPost } from './types/blog-post-types';
+import { useQueryClient } from '@tanstack/react-query';
+import { fetchPosts } from './api/blogPost';
 import './App.css';
 
 function App() {
@@ -15,6 +17,15 @@ function App() {
   const [hobbyIndex, setHobbyIndex] = useState(0);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const alreadySpun = useRef(false);
+
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    queryClient.prefetchQuery({
+      queryKey: ['blogPosts'],
+      queryFn: fetchPosts,
+    });
+  }, [queryClient]);
 
   return (
     <>
