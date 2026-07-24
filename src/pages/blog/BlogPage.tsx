@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
 import BlogSidebar from './BlogSidebar/BlogSidebar.tsx';
 import BlogContent from './BlogContent/BlogContent.tsx';
 import type { BlogPost } from '../../types/blog-post-types.ts';
 import axios from 'axios';
 import './BlogPage.css';
+import { useQuery } from '@tanstack/react-query';
 
 interface Props {
   selectedPost: BlogPost | null;
@@ -11,19 +11,29 @@ interface Props {
 }
 
 function BlogPage({ selectedPost, setSelectedPost }: Props) {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  // const [error, setError] = useState<string | null>(null);
+  // const [posts, setPosts] = useState<BlogPost[]>([]);
+  // // const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     const response = await axios.get(
+  //       `${import.meta.env.VITE_API_URL}/api/blogposts`,
+  //     );
+  //     setPosts(response.data);
+  //   };
+
+  //   fetchPosts();
+  // }, []);
+
+  const { data: posts } = useQuery({
+    queryKey: ['blogPosts'],
+    queryFn: async () => {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/blogposts`,
       );
-      setPosts(response.data);
-    };
-
-    fetchPosts();
-  }, []);
+      return response.data;
+    },
+  });
 
   return (
     <main className="site-blog">
