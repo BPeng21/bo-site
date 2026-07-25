@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, type RefObject } from 'react';
-import type { WheelState } from '../../../types/about-types';
+import type { HobbyInfo, WheelState } from '../../../types/about-types';
+import { preloadImage } from '../../../utilities/preloadImage';
 import './HobbyWheel.css';
 import clsx from 'clsx';
 
@@ -13,6 +14,8 @@ interface Props {
   setIsOnWheel: (isOnWheel: boolean) => void;
 
   alreadySpun: RefObject<boolean>;
+
+  hobbiesInfo: HobbyInfo[];
 }
 
 const SPIN_DURATION = 6;
@@ -22,7 +25,8 @@ function HobbyWheel({
   setHobbyIndex,
   setWheelStatus,
   setIsOnWheel,
-  alreadySpun
+  alreadySpun,
+  hobbiesInfo,
 }: Props) {
   const [rotation, setRotation] = useState(hobbyIndex * 15);
   const isDragging = useRef(false);
@@ -31,7 +35,9 @@ function HobbyWheel({
   const controlledSpinRotation = useRef(hobbyIndex * 15);
   const wheelRef = useRef<HTMLDivElement>(null);
 
-  const [onIntroAnimation, setOnIntroAnimation] = useState(!alreadySpun.current && hobbyIndex === 0);
+  const [onIntroAnimation, setOnIntroAnimation] = useState(
+    !alreadySpun.current && hobbyIndex === 0,
+  );
 
   function handleMouseDown(event: React.MouseEvent) {
     isDragging.current = true;
@@ -72,14 +78,17 @@ function HobbyWheel({
 
       setRotation(calculatedFinalRotation);
 
+      const nextHobbyIndex = (calculatedFinalRotation % 360) / 15;
+
       setTimeout(() => {
         setWheelStatus('spinning');
+        preloadImage(hobbiesInfo[nextHobbyIndex].image);
       }, 0);
 
       setTimeout(
         () => {
           setWheelStatus('ready');
-          setHobbyIndex((calculatedFinalRotation % 360) / 15);
+          setHobbyIndex(nextHobbyIndex);
         },
         (SPIN_DURATION - 1) * 1000,
       );
@@ -127,10 +136,7 @@ function HobbyWheel({
       <img
         src="/images/wheel.svg"
         alt="wheel about me"
-        className={clsx(
-          'wheel-image',
-          onIntroAnimation && 'at-about',
-        )}
+        className={clsx('wheel-image', onIntroAnimation && 'at-about')}
         onAnimationEnd={() => setOnIntroAnimation(false)}
         draggable="false"
         onMouseDown={handleMouseDown}

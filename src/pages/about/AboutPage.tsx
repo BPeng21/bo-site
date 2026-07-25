@@ -31,6 +31,7 @@ function AboutPage({ hobbyIndex, setHobbyIndex, alreadySpun }: Props) {
           setWheelStatus={setWheelStatus}
           setIsOnWheel={setIsOnWheel}
           alreadySpun={alreadySpun}
+          hobbiesInfo={aboutContent.hobbiesInfo}
         />
         {isOnWheel && (
           <>
