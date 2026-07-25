@@ -14,7 +14,7 @@
       "descriptions": [
         "I have always wanted to travel, but never had many opportunities to when I was younger. This has really motivated me to take this hiatus from my career to fulfill the dream I always had. I have been to Tokyo, Sapporo, Seoul, Shanghai, Guangzhou, and many more!"
       ],
-      "image": "/images/Freepik/travel-64.jpg"
+      "image": "/images/Freepik/travel-64.webp"
     },
     {
       "id": "sprts",
@@ -22,7 +22,7 @@
       "descriptions": [
         "Basketball, football, ping pong, badminton. These are just a few sports that I grew up playing whether casually or competitively.  Sports are something I like to watch as well as actively try to attend in person. I have even gone to Esports events."
       ],
-      "image": "/images/Freepik/sports-64.jpg"
+      "image": "/images/Freepik/sports-64.webp"
     },
     {
       "id": "vd-games",
@@ -30,7 +30,7 @@
       "descriptions": [
         "I grew up as a child with video games right there beside me. From Megaman and Pokemon in my childhood, to Madden and Nba2k in my teenage years, and finally transitioning to Genshin and Valorant now, video games have been a major part of my life. Although the genre of the game I play is always changing, my passion for video games is everlasting."
       ],
-      "image": "/images/Freepik/video-games-64.jpg"
+      "image": "/images/Freepik/video-games-64.webp"
     },
     {
       "id": "arcd",
@@ -38,7 +38,7 @@
       "descriptions": [
         "I occasionally enjoy going to the arcade to scratch the itch I have to play on those big old machines. My favorites are the basketball shooting, coin pushers, bowling, and of course, the infamous claw machines."
       ],
-      "image": "/images/Freepik/arcade-64.jpg"
+      "image": "/images/Freepik/arcade-64.webp"
     }
   ]
 }
