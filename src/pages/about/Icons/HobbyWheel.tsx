@@ -33,6 +33,7 @@ function HobbyWheel({
   const startY = useRef(0);
   const startRotation = useRef(0);
   const controlledSpinRotation = useRef(hobbyIndex * 15);
+  const [isWheelInteractable, setIsWheelInteractable] = useState(true);
   const wheelRef = useRef<HTMLDivElement>(null);
 
   const [onIntroAnimation, setOnIntroAnimation] = useState(
@@ -83,12 +84,14 @@ function HobbyWheel({
       setTimeout(() => {
         setWheelStatus('spinning');
         preloadImage(hobbiesInfo[nextHobbyIndex].image);
+        setIsWheelInteractable(false);
       }, 0);
 
       setTimeout(
         () => {
           setWheelStatus('ready');
           setHobbyIndex(nextHobbyIndex);
+          setIsWheelInteractable(true);
         },
         (SPIN_DURATION - 1) * 1000,
       );
@@ -136,7 +139,7 @@ function HobbyWheel({
       <img
         src="/images/wheel.svg"
         alt="wheel about me"
-        className={clsx('wheel-image', onIntroAnimation && 'at-about')}
+        className={clsx('wheel-image', onIntroAnimation && 'at-about', !isWheelInteractable && 'disabled')}
         onAnimationEnd={() => setOnIntroAnimation(false)}
         draggable="false"
         onMouseDown={handleMouseDown}

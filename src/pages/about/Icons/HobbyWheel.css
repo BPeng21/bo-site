@@ -31,6 +31,10 @@
   animation: rotateToStop 2.5s forwards;
 }
 
+.wheel-image.disabled {
+  pointer-events: none;
+}
+
 .wheel-image:hover {
   cursor: pointer;
 }

@@ -10,6 +10,8 @@
   --size-small: 0.875rem; /* captions or metadata */
 
   --site-bg-color: rgb(248, 244, 239) /* main background color of the website */;
+
+  --weight-body: 350; /* font weight for body text */
 }
 
 * {

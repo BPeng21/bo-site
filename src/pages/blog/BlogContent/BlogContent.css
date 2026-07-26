@@ -9,6 +9,7 @@
 
 .blog-text {
   font-size: var(--size-body);
+  font-weight: var(--weight-body);
   text-align: justify;
   margin-bottom: var(--spacing-mini);
 }

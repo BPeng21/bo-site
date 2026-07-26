@@ -23,6 +23,10 @@
   animation: fadeIn 1s forwards;
   z-index: 100;
   opacity: 0;
+
+  p {
+    font-weight: var(--weight-body);
+  }
 }
 
 .info-container {
