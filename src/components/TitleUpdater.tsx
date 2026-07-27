@@ -3,8 +3,8 @@ import { useLocation } from 'react-router';
 
 const titleMap = new Map<string, string>([
   ['/about', 'About Myself'],
-  ['/resume', 'Software Developer Resume'],
-  ['/blog', 'Blog of the Journey to Building Website'],
+  ['/resume', 'Resume | Bo Peng'],
+  ['/blog', 'Blog | Bo Peng'],
 ]);
 
 function TitleUpdater() {
